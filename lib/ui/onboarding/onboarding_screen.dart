@@ -1,15 +1,16 @@
-import 'package:example/main.dart';
 import 'package:example/ui/onboarding/widget/item_onboarding.dart';
+import 'package:example/ui/registration/regisration.dart';
+import 'package:example/util/color.dart';
 import 'package:flutter/material.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
 
   @override
-  _OnboardingScreenState createState() => _OnboardingScreenState();
+  OnboardingScreenState createState() => OnboardingScreenState();
 }
 
-class _OnboardingScreenState extends State<OnboardingScreen> {
+class OnboardingScreenState extends State<OnboardingScreen> {
   final PageController _pageController = PageController();
   int currentPage = 0;
 
@@ -42,10 +43,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
         curve: Curves.easeIn,
       );
     } else {
-      // Navigate to Home Screen after onboarding
-      Navigator.pushReplacement(
+      Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => const MainScreen()),
+        MaterialPageRoute(builder: (context) => const Regisration()),
       );
     }
   }
@@ -53,6 +53,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Clr.white,
       body: PageView.builder(
         controller: _pageController,
         onPageChanged: (index) {
@@ -71,7 +72,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           child: ElevatedButton(
             onPressed: nextPage,
             style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.blue,
+              backgroundColor: Clr.blue,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(50),
               ),

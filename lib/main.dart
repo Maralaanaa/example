@@ -2,11 +2,11 @@ import 'package:example/ui/onboarding/onboarding_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MainScreen());
+  runApp(const Exaple());
 }
 
-class MainScreen extends StatelessWidget {
-  const MainScreen({super.key});
+class Exaple extends StatelessWidget {
+  const Exaple({super.key});
 
   // This widget is the root of your application.
   @override
