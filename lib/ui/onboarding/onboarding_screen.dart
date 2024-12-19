@@ -77,12 +77,12 @@ class OnboardingScreenState extends State<OnboardingScreen> {
                 borderRadius: BorderRadius.circular(50),
               ),
             ),
-            child: Text(
-              currentPage == pages.length - 1 ? "Get Started" : "Next",
-              style: const TextStyle(
+            child: const Text(
+              "Next",
+              style: TextStyle(
                   color: Colors.white,
                   fontSize: 16,
-                  fontWeight: FontWeight.w500),
+                  fontWeight: FontWeight.w600),
             ),
           ),
         ),

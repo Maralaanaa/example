@@ -1,7 +1,9 @@
+import 'package:example/ui/registration/screen/signin_screen.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 import '../../util/color.dart';
+import 'screen/login_screen.dart';
 
 class Regisration extends StatelessWidget {
   const Regisration({super.key});
@@ -58,7 +60,12 @@ class Regisration extends StatelessWidget {
                   width: double.infinity,
                   height: 56,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return const SignupScreen();
+                      }));
+                    },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Clr.blue,
                       shape: RoundedRectangleBorder(
@@ -70,7 +77,7 @@ class Regisration extends StatelessWidget {
                       style: TextStyle(
                           color: Colors.white,
                           fontSize: 16,
-                          fontWeight: FontWeight.w500),
+                          fontWeight: FontWeight.w600),
                     ),
                   )),
               const SizedBox(
@@ -80,19 +87,24 @@ class Regisration extends StatelessWidget {
                 width: double.infinity,
                 height: 56,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return const LoginScreen();
+                    }));
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.white,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(50),
-                        side: const BorderSide(color: Clr.blue, width: 1)),
+                        side: const BorderSide(color: Clr.blue, width: 1.5)),
                   ),
                   child: const Text(
                     "Log in",
                     style: TextStyle(
                         color: Clr.blue,
                         fontSize: 16,
-                        fontWeight: FontWeight.w500),
+                        fontWeight: FontWeight.w600),
                   ),
                 ),
               ),
