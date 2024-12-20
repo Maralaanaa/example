@@ -1,17 +1,16 @@
 import 'package:example/util/color.dart';
 import 'package:flutter/material.dart';
 import 'package:styled_widget/styled_widget.dart';
-
 import '../send/send_screen.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
   @override
-  _HomePageState createState() => _HomePageState();
+  HomePageState createState() => HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class HomePageState extends State<HomePage> {
   int _selectedIndex = 0;
 
   @override
@@ -120,8 +119,9 @@ class _HomePageState extends State<HomePage> {
                   _buildTransactionItem('Spending', '-\$500', Colors.red[800]!,
                           Icons.credit_card)
                       .decorated(
-                        border: const Border(
-                            bottom: BorderSide(color: Colors.grey, width: 0.5)),
+                        border: Border(
+                            bottom: BorderSide(
+                                color: Colors.grey[300]!, width: 0.5)),
                       )
                       .padding(horizontal: 20)
                       .backgroundColor(Clr.white)
@@ -133,16 +133,18 @@ class _HomePageState extends State<HomePage> {
                     Icons.attach_money_outlined,
                   )
                       .decorated(
-                        border: const Border(
-                            bottom: BorderSide(color: Colors.grey, width: 0.5)),
+                        border: Border(
+                            bottom: BorderSide(
+                                color: Colors.grey[300]!, width: 0.5)),
                       )
                       .padding(horizontal: 20)
                       .backgroundColor(Clr.white),
                   _buildTransactionItem('Bills', '-\$800', Colors.red[800]!,
                           Icons.receipt_outlined)
                       .decorated(
-                        border: const Border(
-                            bottom: BorderSide(color: Colors.grey, width: 0.5)),
+                        border: Border(
+                            bottom: BorderSide(
+                                color: Colors.grey[300]!, width: 0.5)),
                       )
                       .padding(horizontal: 20)
                       .backgroundColor(Clr.white),
@@ -187,7 +189,7 @@ class _HomePageState extends State<HomePage> {
                 Container(
                   height: 30,
                   width: 1,
-                  color: Colors.grey[200]!,
+                  color: Colors.grey[100]!,
                 ),
                 Stack(
                   children: [
@@ -205,7 +207,7 @@ class _HomePageState extends State<HomePage> {
                 Container(
                   height: 30,
                   width: 1,
-                  color: Colors.grey[200]!,
+                  color: Colors.grey[100]!,
                 ),
                 _buildActionButton(Icons.account_balance_rounded, 'Bank',
                     Colors.white, Colors.orange, 34, false),
@@ -324,30 +326,20 @@ class _HomePageState extends State<HomePage> {
 
   Widget _buildTransactionItem(
       String title, String amount, Color amountColor, IconData icon) {
-    return Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-      Row(
-        children: [
-          Icon(icon, color: amountColor)
-              .padding(all: 8)
-              .decorated(
-                color: amountColor.withOpacity(0.1),
-                shape: BoxShape.circle,
-              )
-              .padding(right: 8),
-          Text(title, style: const TextStyle(fontSize: 15)),
-        ],
+    return ListTile(
+      contentPadding: const EdgeInsets.symmetric(vertical: 6),
+      leading: Icon(icon, color: amountColor).padding(all: 8).decorated(
+            color: amountColor.withOpacity(.15),
+            borderRadius: BorderRadius.circular(20),
+          ),
+      title: Text(title),
+      trailing: Text(
+        amount,
+        style: TextStyle(
+          fontSize: 13,
+          color: amountColor,
+        ),
       ),
-      Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Text(
-            amount,
-            style: TextStyle(fontSize: 15, color: amountColor),
-          ).padding(right: 8),
-          const Icon(Icons.keyboard_arrow_right_rounded,
-              size: 22, color: Colors.grey),
-        ],
-      ),
-    ]).padding(vertical: 18);
+    );
   }
 }
