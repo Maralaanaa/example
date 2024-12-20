@@ -1,8 +1,8 @@
 import 'dart:ui';
 
+import 'package:example/ui/qr_scan/qr_scan_screen.dart';
 import 'package:example/ui/send/screen/select_purpose_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get_connect/http/src/utils/utils.dart';
 import 'package:styled_widget/styled_widget.dart';
 
 import '../../util/color.dart';
@@ -236,6 +236,15 @@ class _SendScreenState extends State<SendScreen> {
               .decorated(shape: BoxShape.circle, color: Clr.blue),
           const Text('Scan to Pay').padding(top: 8),
         ],
+      ).gestures(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => QRCodeScannerScreen(),
+            ),
+          );
+        },
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );

@@ -1,5 +1,6 @@
 import 'package:example/ui/home/home_page.dart';
 import 'package:example/ui/page_not_found/page_not_found_screen.dart';
+import 'package:example/ui/qr_scan/qr_scan_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -96,7 +97,7 @@ class _MainScreenState extends State<MainScreen> {
               Icon(
                 Icons.pie_chart_outline,
                 color: index == 1 ? Clr.blue : Clr.grey,
-              ).padding(bottom: 3),
+              ),
               Material(
                 color: index == 1 ? Clr.blue : Clr.white,
               ).width(4).height(4).clipRRect(all: 4)
@@ -109,8 +110,14 @@ class _MainScreenState extends State<MainScreen> {
           const Icon(
             Icons.qr_code_scanner_rounded,
             color: Clr.white,
-          ).padding(all: 18).decorated(
-              color: Clr.blue, borderRadius: BorderRadius.circular(10)),
+          )
+              .padding(all: 18)
+              .decorated(
+                  color: Clr.blue, borderRadius: BorderRadius.circular(10))
+              .gestures(onTap: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => QRCodeScannerScreen()));
+          }),
           Column(
             mainAxisSize: MainAxisSize.min,
             children: [

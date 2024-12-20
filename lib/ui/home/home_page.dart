@@ -1,7 +1,6 @@
 import 'package:example/util/color.dart';
 import 'package:flutter/material.dart';
 import 'package:styled_widget/styled_widget.dart';
-import '../qr_scan/qr_scan_screen.dart';
 import '../send/send_screen.dart';
 
 class HomePage extends StatefulWidget {
@@ -12,8 +11,6 @@ class HomePage extends StatefulWidget {
 }
 
 class HomePageState extends State<HomePage> {
-  int _selectedIndex = 0;
-
   @override
   Widget build(BuildContext context) {
     return Stack(
