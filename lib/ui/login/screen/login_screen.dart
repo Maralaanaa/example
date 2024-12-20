@@ -191,36 +191,32 @@ class _LoginScreenState extends State<LoginScreen> {
               'Forgot password?',
               style: TextStyle(color: Clr.blue),
             ).gestures(onTap: () {}),
-            const Spacer(),
-            SizedBox(
-              width: double.infinity,
-              height: 56,
-              child: ElevatedButton(
-                onPressed: isButtonActive
-                    ? () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const MainScreen()),
-                        );
-                      }
-                    : null,
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: isButtonActive ? Clr.blue : Clr.grey,
-                  foregroundColor: Clr.white,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(50),
-                  ),
-                ),
-                child: const Text("Log in",
-                    style:
-                        TextStyle(fontSize: 16, fontWeight: FontWeight.w600)),
-              ),
-            ),
-            const SizedBox(height: 50),
           ],
         ),
       ),
+      floatingActionButton: ElevatedButton(
+        onPressed: isButtonActive
+            ? () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const MainScreen()),
+                );
+              }
+            : null,
+        style: ElevatedButton.styleFrom(
+          backgroundColor: isButtonActive ? Clr.blue : Clr.grey,
+          foregroundColor: Clr.white,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(50),
+          ),
+        ),
+        child: const Text("Log in",
+            style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600)),
+      )
+          .width(MediaQuery.of(context).size.width)
+          .padding(horizontal: 18)
+          .height(56),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 
