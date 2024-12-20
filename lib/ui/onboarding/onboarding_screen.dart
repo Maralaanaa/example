@@ -1,5 +1,5 @@
 import 'package:example/ui/onboarding/widget/item_onboarding.dart';
-import 'package:example/ui/registration/regisration.dart';
+import 'package:example/ui/login/registration_screen.dart';
 import 'package:example/util/color.dart';
 import 'package:flutter/material.dart';
 

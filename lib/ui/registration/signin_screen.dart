@@ -3,7 +3,7 @@ import 'package:example/ui/registration/screen/verify_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:styled_widget/styled_widget.dart';
 
-import '../../../util/color.dart';
+import '../../util/color.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
@@ -177,22 +177,20 @@ class _SignupScreenState extends State<SignupScreen> {
             Row(
               children: [
                 Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 8),
+                  // padding: const EdgeInsets.only(horizontal: 8),
                   decoration: BoxDecoration(
                     border: Border.all(color: Clr.grey),
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child: SizedBox(
                     height: 50,
-                    width: 90,
+                    width: 110,
                     child: DropdownButtonHideUnderline(
                       child: DropdownButton2(
+                        alignment: Alignment.center,
                         isExpanded: true,
                         iconStyleData: const IconStyleData(
-                          icon: Icon(
-                            Icons.keyboard_arrow_down_rounded,
-                            color: Colors.grey,
-                          ),
+                          icon: SizedBox.shrink(),
                         ),
                         value: selectedCountryCode,
                         items: countryCodes.map((country) {

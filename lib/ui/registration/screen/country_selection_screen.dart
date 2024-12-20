@@ -1,4 +1,5 @@
 import 'package:dropdown_button2/dropdown_button2.dart';
+import 'package:example/ui/home/home_page.dart';
 import 'package:flutter/material.dart';
 
 import '../../../util/color.dart';
@@ -134,11 +135,11 @@ class CountrySelectionScreenState extends State<CountrySelectionScreen> {
               child: ElevatedButton(
                 onPressed: isButtonActive
                     ? () {
-                        // Navigator.push(
-                        //   context,
-                        //   MaterialPageRoute(
-                        //       builder: (context) => const HomeAddressScreen()),
-                        // );
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const HomePage()),
+                        );
                       }
                     : null,
                 style: ElevatedButton.styleFrom(

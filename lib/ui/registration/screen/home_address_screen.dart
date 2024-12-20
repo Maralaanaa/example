@@ -1,4 +1,4 @@
-import 'package:example/ui/account_setup/screen/personal_info_screen.dart';
+import 'package:example/ui/registration/screen/personal_info_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:styled_widget/styled_widget.dart';
 

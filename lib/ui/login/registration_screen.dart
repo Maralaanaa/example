@@ -1,4 +1,4 @@
-import 'package:example/ui/registration/screen/signin_screen.dart';
+import 'package:example/ui/registration/signin_screen.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
@@ -137,11 +137,7 @@ class Regisration extends StatelessWidget {
                       style: const TextStyle(
                           color: Clr.blue,
                           decoration: TextDecoration.underline),
-                      recognizer: TapGestureRecognizer()
-                        ..onTap = () {
-                          // Add the navigation action for Privacy Policy
-                          print('Privacy Policy tapped');
-                        },
+                      recognizer: TapGestureRecognizer()..onTap = () {},
                     ),
                   ],
                 ),

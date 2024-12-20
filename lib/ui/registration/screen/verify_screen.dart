@@ -1,4 +1,4 @@
-import 'package:example/ui/account_setup/screen/add_email_screen.dart';
+import 'package:example/ui/registration/screen/add_email_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../../../util/color.dart';

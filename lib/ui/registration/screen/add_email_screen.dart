@@ -1,4 +1,4 @@
-import 'package:example/ui/account_setup/screen/home_address_screen.dart';
+import 'package:example/ui/registration/screen/home_address_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../util/color.dart';
