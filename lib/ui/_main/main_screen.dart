@@ -1,4 +1,5 @@
 import 'package:example/ui/home/home_page.dart';
+import 'package:example/ui/page_not_found/page_not_found_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -18,9 +19,9 @@ class _MainScreenState extends State<MainScreen> {
   int index = 0;
   List<Widget> pages = [
     const HomePage(),
-    const Placeholder(),
-    const Placeholder(),
-    const Placeholder(),
+    const PageNotFoundScreen(),
+    const PageNotFoundScreen(),
+    const PageNotFoundScreen(),
   ];
   PageController pageController = PageController();
 
@@ -35,6 +36,7 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBody: true,
+      backgroundColor: Clr.white,
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Clr.blue,
