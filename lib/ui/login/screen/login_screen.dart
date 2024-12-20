@@ -1,4 +1,5 @@
 import 'package:dropdown_button2/dropdown_button2.dart';
+import 'package:example/ui/_main/main_screen.dart';
 import 'package:example/ui/home/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -200,7 +201,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const HomePage()),
+                              builder: (context) => const MainScreen()),
                         );
                       }
                     : null,

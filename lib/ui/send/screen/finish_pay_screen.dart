@@ -1,3 +1,4 @@
+import 'package:example/ui/_main/main_screen.dart';
 import 'package:example/ui/home/home_page.dart';
 import 'package:example/ui/send/screen/select_purpose_screen.dart';
 import 'package:example/util/extensions.dart';
@@ -106,7 +107,7 @@ class _FinishPayScreenState extends State<FinishPayScreen> {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const HomePage()),
+                MaterialPageRoute(builder: (context) => const MainScreen()),
               );
             },
             style: ElevatedButton.styleFrom(
