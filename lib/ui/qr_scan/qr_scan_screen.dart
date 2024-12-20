@@ -24,13 +24,15 @@ class QRCodeScannerScreenState extends State<QRCodeScannerScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Clr.blue.withOpacity(.2),
+      // extendBody: true,
+      backgroundColor: Colors.transparent,
       body: Stack(
         children: [
           QRView(
             key: qrKey,
             onQRViewCreated: _onQRViewCreated,
             overlay: QrScannerOverlayShape(
+              overlayColor: Clr.blue.withOpacity(0.95),
               borderColor: Colors.white,
               borderRadius: 10,
               borderLength: 30,
