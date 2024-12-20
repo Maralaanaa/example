@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 import 'package:styled_widget/styled_widget.dart';
 
+import '../../util/color.dart';
+
 class QRCodeScannerScreen extends StatefulWidget {
   const QRCodeScannerScreen({super.key});
 
@@ -22,6 +24,7 @@ class QRCodeScannerScreenState extends State<QRCodeScannerScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Clr.blue.withOpacity(.2),
       body: Stack(
         children: [
           QRView(
@@ -71,10 +74,11 @@ class QRCodeScannerScreenState extends State<QRCodeScannerScreen> {
                         controller?.toggleFlash();
                       },
                     ),
-                    const CircleAvatar(
-                      radius: 30,
-                      backgroundColor: Colors.white,
-                      child: Icon(Icons.camera, color: Colors.blue, size: 30),
+                    CircleAvatar(
+                      radius: 33,
+                      backgroundColor: Colors.white.withOpacity(.2),
+                      child: const Icon(Icons.circle,
+                          color: Colors.white, size: 52),
                     ).padding(horizontal: 18),
                     IconButton(
                       icon: const Icon(Icons.refresh, color: Colors.white),
